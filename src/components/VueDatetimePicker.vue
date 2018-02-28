@@ -1,6 +1,6 @@
 <template>
   <div ref='pickerContainer' class='vue-simple-date-time-picker'>
-    <input ref='pickerField' :value='value' />
+    <input ref='pickerField' :value='value' v-on:focus='lazyInitialisePicker()' />
   </div>
 </template>
 
@@ -36,10 +36,20 @@ export default {
     }
   },
   mounted () {
-    this.thePicker = new DPicker(this.$refs.pickerField, this.optionSet)
-    this.thePicker.onChange = this.updateParent
+    if (this.value) {
+      this.initialisePicker()
+    }
   },
   methods: {
+    lazyInitialisePicker () {
+      if (!this.thePicker) {
+        this.initialisePicker()
+      }
+    },
+    initialisePicker () {
+      this.thePicker = new DPicker(this.$refs.pickerField, this.optionSet)
+      this.thePicker.onChange = this.updateParent
+    },
     updateParent () {
       this.$emit('input', this.thePicker.input)
     }
