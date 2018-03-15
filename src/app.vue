@@ -1,7 +1,12 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <VueDatetimePicker v-model='blank' format='YYYY-MM-DD HH:mm'></VueDatetimePicker>
+    <img src="./assets/logo.png"> <br />
+    Date
+    <VueDatetimePicker v-model='date' type='date' format='DD/MM/YYYY'></VueDatetimePicker>
+    Time
+    <VueDatetimePicker v-model='time' type='time' format='HH:mm'></VueDatetimePicker>
+    Datetime
+    <VueDatetimePicker v-model='datetime' type='datetime' format='DD/MM/YYYY HH:mm'></VueDatetimePicker>
   </div>
 </template>
 
@@ -15,7 +20,9 @@ export default {
   },
   data () {
     return {
-      blank: '2012-07-09 19:22:09.1440844Z'
+      date: null,
+      time: null,
+      datetime: null
     }
   }
 }
@@ -26,7 +33,7 @@ export default {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
+  text-align: left;
   color: #2c3e50;
   margin-top: 60px;
 }

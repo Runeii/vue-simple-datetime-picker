@@ -12,7 +12,7 @@ DPicker.dateAdapter = adapter
 
 export default {
   name: 'VueSimpleDatetimePicker',
-  props: ['options', 'value', 'format'],
+  props: ['options', 'value', 'format', 'type'],
   data () {
     return {
       date: '',
@@ -32,7 +32,12 @@ export default {
       return false
     },
     optionSet () {
-      return {...this.defaultOptions, model: this.model, ...this.options}
+      return {
+        ...this.defaultOptions,
+        model: this.model,
+        time: this.$props.type && (this.$props.type === 'time' || this.$props.type === 'datetime') || false,
+        ...this.options
+      }
     }
   },
   mounted () {
@@ -44,6 +49,7 @@ export default {
     lazyInitialisePicker () {
       if (!this.thePicker) {
         this.initialisePicker()
+        this.thePicker.display = true
       }
     },
     initialisePicker () {
@@ -65,6 +71,12 @@ $highlight: #ffab40;
   display:table;
   font-size: 1em;
   font-family: inherit;
+}
+.vue-simple-date-time-picker input {
+  z-index: 1;
+}
+.dpicker-container {
+  z-index: 2;
 }
 .dpicker-invisible {
   display: none;
