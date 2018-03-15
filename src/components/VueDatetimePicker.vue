@@ -1,5 +1,5 @@
 <template>
-  <div ref='pickerContainer' class='vue-simple-date-time-picker'>
+  <div ref='pickerContainer' class='vue-simple-date-time-picker' :class="$props.type">
     <input ref='pickerField' :value='value' v-on:focus='lazyInitialisePicker()' />
   </div>
 </template>
@@ -94,6 +94,15 @@ $highlight: #ffab40;
   padding: 1em;
 }
 
+.vue-simple-date-time-picker.time {
+  .dpicker-visible {
+    min-width: 100%;
+  }
+  .dpicker-container > *:not(.dpicker-time) {
+    display:none;
+  }
+}
+
 .dpicker-month, .dpicker-year {
   order: 1;
 }
@@ -103,7 +112,6 @@ table {
 .dpicker-time {
   order: 3;
 }
-
 select {
   margin: 0 1em;
 }
