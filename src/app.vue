@@ -20,9 +20,9 @@ export default {
   },
   data () {
     return {
-      date: null,
-      time: null,
-      datetime: null
+      date: '2018-12-28',
+      time: '2018-12-28T13:09:00.000Z',
+      datetime: '2018-12-28T13:09:00.000Z'
     }
   }
 }

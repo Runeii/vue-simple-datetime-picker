@@ -1,6 +1,6 @@
 <template>
   <div ref='pickerContainer' class='vue-simple-date-time-picker' :class="$props.type">
-    <input ref='pickerField' :value='value' v-on:focus='lazyInitialisePicker()' />
+    <input ref='pickerField' :value='model' v-on:focus='lazyInitialisePicker()' />
   </div>
 </template>
 

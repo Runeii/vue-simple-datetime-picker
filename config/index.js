@@ -33,7 +33,7 @@ module.exports = {
   },
   dev: {
     env: require('./dev.env'),
-    port: 8000,
+    port: 8001,
     autoOpenBrowser: true,
     assetsSubDirectory: 'docs',
     assetsPublicPath: '/',
