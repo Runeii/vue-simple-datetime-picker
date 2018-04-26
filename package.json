@@ -1,6 +1,6 @@
 {
   "name": "vue-simple-datetime-picker",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "A no nonsense, self contained datetime selector for Vue.js",
   "author": "Andrew Hill <contact@andrewthomashill.co.uk>",
   "main": "dist/lib/vue-simple-datetime-picker.min.js",
